@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+    mysqldb:
+        image: mysql
+        container_name: db_mysqldb
+        environment:
+            - MYSQL_ROOT_PASSWORD=12345
+            - MYSQL_USER=turbosms
+            - MYSQL_DATABASE=turbosms
+            - MYSQL_PASSWORD=12345
+        ports:
+            - 9826:3306
+        volumes:
+            - mysqldb_data:/var/lib/mysql
+    dbeaver:
+        image: dbeaver/cloudbeaver
+        container_name: db_dbeaver_course
+        environment:
+            - PMA_HOST=db_dbeaver
+            - UPLOAD_LIMIT=5242880000
+        ports:
+            - 9825:8978
+    redis:
+        image: 'redis:latest'
+        ports:
+            - '6379:6379'
+
+volumes:
+    mysqldb_data:
+    postgres_data:
+
