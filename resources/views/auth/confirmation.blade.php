@@ -61,9 +61,6 @@
                         @if(isset($error))
                             <p style="font-size:12px; color:red; padding-bottom:10px;">{{$error}}</p>
                         @endif
-{{--                        @if($errors->any())--}}
-{{--                            <p style="font-size:12px; color:red; padding-bottom:10px;">{{(session('errors')->first('error'))}}</p>--}}
-{{--                        @endif--}}
                         <button type="submit" class="form__button btn">Підтвердити</button>
                         <a href="{{route('auth.login')}}" class="form__link">Вхід</a>
                         <a href="{{route('auth.register')}}" class="form__link">Зареєструватися</a>

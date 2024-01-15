@@ -39,8 +39,8 @@ class LoginController extends Controller
             return redirect()->route('auth.login')->withErrors(['error' => $notification]);
         }
         $turboSmsService = new TurboSmsService([$phone]);
-//      For using actual turbosms functionality
 
+//      For using actual turbosms functionality
 //        $result = $turboSmsService->sendCode();
 //        $code = $result['code'];
 
